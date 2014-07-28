@@ -1,0 +1,24 @@
+{
+    "name": "jquery.wheel",
+    "version": "0.1.0",
+    "description": "jquery plugin for mousewheel event, compatibility IE9+, Chrome, Firefox, Opera on Windows & Chrome, Safari, Firefox on MacOS",
+    "main": "jquery.wheel.js",
+    "scripts": {
+        "test": "http-server -p 8000"
+    },
+    "author": "Justin Fang",
+    "license": "MIT",
+    "keywords": [
+        "jquery",
+        "plugin",
+        "mousewheel",
+        "wheel",
+        "event"
+    ],
+    "devDependencies": {
+        "http-server": "^0.6.1"
+    },
+    "directories": {
+        "test": "test"
+    }
+}
