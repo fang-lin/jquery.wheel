@@ -27,8 +27,6 @@
 
     var props = 'deltaMode deltaX deltaY deltaZ detail';
 
-    console.log(supportType);
-
     var wheel = $.event.special.wheel = {
 
         setup: function () {

@@ -2,31 +2,49 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <script src="../bowers/jquery/jquery.js"></script>
+    <script src="../bowers/jquery/dist/jquery.js"></script>
     <script src="../jquery.wheel.js"></script>
     <script>
         $(function () {
+            // init content
+            $('.scroll-wrap').each(function () {
+                var inner = $('<div/>');
+                for (var i = 0; i < 50; ++i) {
+                    inner.append('<p>' + Math.random() + '</p>')
+                }
+                return $(this).append(inner);
+            });
 
-            $('.scroll-wrap').on('wheel', function (event, data) {
+            $('.scroll-wrap').eq(0).on('wheel', function (event) {
+                event.preventDefault();
+            });
 
-//                console.log('wheel.myNamespace2');
+            $('.scroll-wrap').eq(1).on('wheel', function (event) {
 
                 $(this).scrollTop($(this).scrollTop() + event.deltaY);
                 event.preventDefault();
             });
 
-//            $('.scroll-wrap').on('wheel.myNamespace1', function (event, data) {
-//
-//                console.log('wheel.myNamespace1');
-//                event.preventDefault();
-//
-//            });
+            $('.scroll-wrap').eq(2).wheel(function (event) {
 
-            $('.scroll-wrap').wheel({a: 'ffff'});
+                $(this).scrollTop($(this).scrollTop() + event.deltaY);
+                event.preventDefault();
+            });
+
+            $('.scroll-wrap').eq(3).wheel(function (event) {
+
+                $(this).scrollLeft($(this).scrollLeft() + event.deltaY);
+                event.preventDefault();
+            });
 
         });
     </script>
     <style>
+        html, body {
+            font: 12px/18px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+
+        }
+
         .scroll-wrap {
             height: 200px;
             overflow: scroll;
@@ -37,78 +55,24 @@
             padding: 10px 0;
             background: #219161;
         }
+
+        #scroll-x div {
+            width: 10000px;
+        }
+
+        #scroll-x p {
+            margin: 0;
+            height: 150px;
+            width: 200px;
+            display: inline-block;
+        }
     </style>
     <title>jquery.wheel Event Plugin</title>
 </head>
 <body>
-<div class="scroll-wrap">
-    <div>
-        <p>aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa </p>
-
-        <p>bbb bbb bbb bbb bbb bbb bbb bbb bbb bbb bbb bbb </p>
-
-        <p>ccc ccc ccc ccc ccc ccc ccc ccc ccc ccc ccc ccc </p>
-
-        <p>aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa </p>
-
-        <p>bbb bbb bbb bbb bbb bbb bbb bbb bbb bbb bbb bbb </p>
-
-        <p>ccc ccc ccc ccc ccc ccc ccc ccc ccc ccc ccc ccc </p>
-
-        <p>aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa </p>
-
-        <p>bbb bbb bbb bbb bbb bbb bbb bbb bbb bbb bbb bbb </p>
-
-        <p>ccc ccc ccc ccc ccc ccc ccc ccc ccc ccc ccc ccc </p>
-
-        <p>aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa </p>
-
-        <p>bbb bbb bbb bbb bbb bbb bbb bbb bbb bbb bbb bbb </p>
-
-        <p>ccc ccc ccc ccc ccc ccc ccc ccc ccc ccc ccc ccc </p>
-
-        <p>aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa </p>
-
-        <p>bbb bbb bbb bbb bbb bbb bbb bbb bbb bbb bbb bbb </p>
-
-        <p>ccc ccc ccc ccc ccc ccc ccc ccc ccc ccc ccc ccc </p>
-
-        <p>aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa </p>
-
-        <p>bbb bbb bbb bbb bbb bbb bbb bbb bbb bbb bbb bbb </p>
-
-        <p>ccc ccc ccc ccc ccc ccc ccc ccc ccc ccc ccc ccc </p>
-
-        <p>aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa </p>
-
-        <p>bbb bbb bbb bbb bbb bbb bbb bbb bbb bbb bbb bbb </p>
-
-        <p>ccc ccc ccc ccc ccc ccc ccc ccc ccc ccc ccc ccc </p>
-
-        <p>aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa </p>
-
-        <p>bbb bbb bbb bbb bbb bbb bbb bbb bbb bbb bbb bbb </p>
-
-        <p>ccc ccc ccc ccc ccc ccc ccc ccc ccc ccc ccc ccc </p>
-
-        <p>aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa </p>
-
-        <p>bbb bbb bbb bbb bbb bbb bbb bbb bbb bbb bbb bbb </p>
-
-        <p>ccc ccc ccc ccc ccc ccc ccc ccc ccc ccc ccc ccc </p>
-
-        <p>aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa </p>
-
-        <p>bbb bbb bbb bbb bbb bbb bbb bbb bbb bbb bbb bbb </p>
-
-        <p>ccc ccc ccc ccc ccc ccc ccc ccc ccc ccc ccc ccc </p>
-
-        <p>aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa </p>
-
-        <p>bbb bbb bbb bbb bbb bbb bbb bbb bbb bbb bbb bbb </p>
-
-        <p>ccc ccc ccc ccc ccc ccc ccc ccc ccc ccc ccc ccc </p>
-    </div>
-</div>
+<div class="scroll-wrap"></div>
+<div class="scroll-wrap"></div>
+<div class="scroll-wrap"></div>
+<div class="scroll-wrap" id="scroll-x"></div>
 </body>
 </html>
