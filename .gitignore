@@ -1,0 +1,6 @@
+.idea/
+.git/
+node_modules/
+bowers/
+npm-debug.log
+.DS_Store
