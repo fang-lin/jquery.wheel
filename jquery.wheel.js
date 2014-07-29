@@ -27,7 +27,7 @@
 
     var props = 'deltaMode deltaX deltaY deltaZ';
 
-    var wheel = $.event.special.wheel = {
+    $.event.special.wheel = {
 
         setup: function () {
             if (this.addEventListener) {
