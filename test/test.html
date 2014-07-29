@@ -6,8 +6,9 @@
     <script src="../jquery.wheel.js"></script>
     <script>
         $(function () {
+            var $scrollWrap = $('.scroll-wrap');
             // init content
-            $('.scroll-wrap').each(function () {
+            $scrollWrap.each(function () {
                 var inner = $('<div/>');
                 for (var i = 0; i < 50; ++i) {
                     inner.append('<p>' + Math.random() + '</p>')
@@ -15,25 +16,28 @@
                 return $(this).append(inner);
             });
 
-            $('.scroll-wrap').eq(0).on('wheel', function (event) {
+            $scrollWrap.eq(0).on('wheel', function (event) {
                 event.preventDefault();
             });
 
-            $('.scroll-wrap').eq(1).on('wheel', function (event) {
+            $scrollWrap.eq(1).on('wheel', function (event) {
+                var delta = event.deltaY;
 
-                $(this).scrollTop($(this).scrollTop() + event.deltaY);
+                $(this).scrollTop($(this).scrollTop() + delta);
                 event.preventDefault();
             });
 
-            $('.scroll-wrap').eq(2).wheel(function (event) {
+            $scrollWrap.eq(2).wheel(function (event) {
+                var delta = event.deltaY;
 
-                $(this).scrollTop($(this).scrollTop() + event.deltaY);
+                $(this).scrollTop($(this).scrollTop() + delta);
                 event.preventDefault();
             });
 
-            $('.scroll-wrap').eq(3).wheel(function (event) {
+            $scrollWrap.eq(3).wheel(function (event) {
+                var delta = event.deltaY;
 
-                $(this).scrollLeft($(this).scrollLeft() + event.deltaY);
+                $(this).scrollLeft($(this).scrollLeft() + delta);
                 event.preventDefault();
             });
 

@@ -1,20 +1,20 @@
 {
-  "name": "jquery.wheel",
-  "main": "jquery.wheel.js",
-  "version": "0.1.0",
-  "authors": [
-    "Justin Fang <justin@gmail.com>"
-  ],
-  "description": "jquery plugin for mousewheel event, compatibility IE8+, Chrome, Firefox, Opera on Windows & Chrome, Safari, Firefox on MacOS",
-  "license": "MIT",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
-  "dependencies": {
-    "jquery": "~2.1.1"
-  }
+    "name": "jquery.wheel",
+    "main": "jquery.wheel.js",
+    "version": "1.0.1",
+    "authors": [
+        "Justin Fang <justin@gmail.com>"
+    ],
+    "description": "jquery plugin for mousewheel event, compatibility IE8+, Chrome, Firefox, Opera on Windows & Chrome, Safari, Firefox on MacOS",
+    "license": "MIT",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ],
+    "dependencies": {
+        "jquery": "~2.1.1"
+    }
 }

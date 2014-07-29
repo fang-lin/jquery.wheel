@@ -25,7 +25,7 @@
         // let's assume that remaining browsers are older Firefox
         'DOMMouseScroll';
 
-    var props = 'deltaMode deltaX deltaY deltaZ detail';
+    var props = 'deltaMode deltaX deltaY deltaZ';
 
     var wheel = $.event.special.wheel = {
 
@@ -44,11 +44,16 @@
 
     var handle = function (originalEvent) {
         var event = $.event.fix(originalEvent),
-            args = arguments;
+            args = arguments,
+            lineHeight = parseInt($(this).css('line-height'));
 
         $.each(props.split(' '), function (index, prop) {
             if (prop in originalEvent) {
                 event[prop] = originalEvent[prop];
+
+                if (originalEvent.deltaMode === 1) {
+                    event[prop] = (index ? event[prop] * lineHeight : 0);
+                }
             }
         });
 

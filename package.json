@@ -1,6 +1,6 @@
 {
   "name": "jquery.wheel",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "jquery plugin for mousewheel event, compatibility IE9+, Chrome, Firefox, Opera on Windows & Chrome, Safari, Firefox on MacOS",
   "main": "jquery.wheel.js",
   "repository": {
